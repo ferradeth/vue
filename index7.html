@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="js/main7.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+        #app>div{
+            max-width: 310px;
+            border: 1px solid grey;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        button{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: 0px;
+            border-radius: 5px;
+        }
+        #kolv{
+            text-align: right;
+            width: 320px;
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Мысли...</h1>
+        <p>Добавьте сообщение:</p>
+        <textarea rows="10" cols="40" @input="countSymbols" id="textArea"></textarea>
+        <p :class='{active: amount>60}' id="kolv">Всего: {{amount}} из 60</p>
+        <button @click='addToArray'>Добавить</button>
+
+        <div v-for='(item, index) in messages' @dblclick='deleteElem'>{{item}}</div>
+    </div>
+    
+</body>
+</html>

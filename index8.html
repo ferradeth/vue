@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="js/main8.js"></script>
+    <style>
+        .check{
+            display: flex;
+            flex-direction: column;
+        }
+        .active{
+           text-decoration: line-through;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="check">
+            <label v-for='item in inputs'>
+                <input type="checkbox" @input="item.done = !item.done">
+                {{item.text}}
+            </label>
+        </div>
+        <div class="todos">
+            <ul>
+                <li v-for='item in inputs' :class="{active: item.done==true}">{{item.text}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

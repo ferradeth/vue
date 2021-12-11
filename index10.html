@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="js/main10.js"></script>
+    <link rel="stylesheet" href="css/style10.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Компания Авалон</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est qui ad eius eaque velit rerum iure molestias adipisci impedit nulla! Provident eligendi natus ipsum. Maiores deleniti rem placeat sunt eligendi repudiandae numquam consequatur nihil dolorum sit, doloremque est atque temporibus eos harum assumenda modi voluptatem autem quo impedit reprehenderit quos architecto inventore. Ea debitis voluptates quibusdam tempore officia deserunt cumque, rerum reprehenderit eum adipisci culpa mollitia incidunt libero impedit at ipsam vel pariatur iure doloribus. Molestias, esse! Alias id asperiores, fuga quisquam nihil saepe culpa aliquam iusto unde esse reiciendis ea, earum temporibus sunt numquam minus nisi. Voluptatum non at expedita veniam quia dolorum officiis, consectetur, omnis fuga voluptates fugiat quis maiores mollitia debitis velit repellat, minus exercitationem nihil labore? Est alias, odit quis voluptate ad magnam assumenda fugiat atque! Praesentium eos fugit inventore deserunt quidem repellat minus voluptas iure accusamus, quia quasi dolorum! Omnis odit repellendus nemo qui quia!</p>
+        <p class="secp">Выбрать даты и место самоизоляции</p>
+        <div class="steps">
+            <div class="step" v-for='(item, index) in arrSteps'  >
+                <span class="num" :class="{active: currentStep == index}" :class="{done: currentStep > index}">{{item.number}}</span>
+                <span class="name-step">{{item.name}}</span>
+            </div>
+        </div>
+        <div class="btns">
+            <button class="back" @click="currentStep--">Назад</button>
+            <button class="next" @click="currentStep++">Следующий</button>
+        </div>
+    </div>
+</body>
+</html>

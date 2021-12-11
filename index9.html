@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="js/main9.js"></script>
+    <style>
+        #app{
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+        }
+        .active{
+            color: red;
+        }
+        #app>div{
+            max-width: 310px;
+            border: 1px solid grey;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: 0px;
+            border-radius: 5px;
+        }
+        .add{
+            width: 150px;
+            border: 2px solid green;
+            background-color: white;
+            color: green;
+            margin-top: 10px;
+        }
+        #kolv{
+            text-align: right;
+            width: 320px;
+        }
+        .del{
+            background-color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Список заметок</h1>
+        <textarea rows="2" cols="40"  id="textArea" placeholder="Введите название заметки"></textarea>
+        <button @click='addToArray' class="add">Добавить</button>
+
+        <div v-for='(item, index) in messages' >{{item}}
+        <button @click='deleteElem' class="del">Удалить</button></div>
+        <p  id="kolv">Всего сообщений: {{messages.length}}</p>
+    </div>
+    
+</body>
+</html>

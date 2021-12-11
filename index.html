@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>v-for</title>
+</head>
+<body>
+    <div id="app">
+        <article>
+        <ul>
+            <li 
+            class='arrayS-li'
+            v-for='(item, index) in array'
+            @click='showContent(item)'
+            :class="{ active: currentIndex == index}">
+            {{index+1}} - {{item.title}}</li>
+        </ul>
+        <img class="content" :src="currentItem.content"> 
+        </article>
+        
+        <hr>
+        <input type="text" v-model='currentTodo' @keydown.enter = 'addTodoItem'>
+        <button @click='addTodoItem'>Добавить</button><br>
+        <span class='error'></span>
+        <ul>
+            <li v-for='(item, index) in animals'  class='arrayS-li'>{{item}}</li>
+        </ul>
+        <hr>
+        От<input type='number' v-model='start'> до
+        <input type='number' v-model='end'>
+        <button @click='addItem'>OK</button>
+        <ul>
+            <li v-for='(item, index) in counts'  class='arrayS-li'>{{item}}</li>
+        </ul>
+    </div>
+</body>
+</html>
